@@ -1,0 +1,15 @@
+module AuctionApp
+{
+	interface Auction
+	{
+		void offerItem(in long uID, in string description, in float initialPrice, out string status);
+		long getNextUserID();
+		void sell(in long uID, out string status);
+		void bid(in long uID, in float bidPrice, out string status);
+		long viewHighBidder();
+		boolean viewBidStatus(in long uID, out string status);
+		boolean isActive();
+		string viewAuctionStatus();
+		oneway void shutdown();
+	};
+};
